@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Inferno"
+version = "1.0.0"
+id = "artifacts/inferno"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26050
+
+[services.development]
+run = "pnpm --filter @workspace/inferno run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/inferno", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/inferno/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26050"
+BASE_PATH = "/"
