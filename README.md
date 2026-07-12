@@ -1,4 +1,4 @@
-# 🔥 Inferno
+# Inferno
 
 A desktop-style cloud file manager with a custom path display format, built with React, Express, PostgreSQL, and Clerk auth. Also ships as a standalone Electron desktop app with SQLite and local filesystem storage.
 
